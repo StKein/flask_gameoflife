@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="gamearea">
+    <div class="gameinfo info-p1">
+        <div class="infoheader">Player 1</div>
+        <div class="infoname">{{ player_1 }}</div>
+        <div class="infocells _p1_cells" title="Number of alive cells">0</div>
+    </div>
+    <div class="gamemain _gamemain">
+        <div class="gamestatus_wrapper">
+            <span class="gamestatus _gamestatus">{{ status }}</span>
+        </div>
+        <div class="gameboard_wrapper _gameboard_wrapper">
+            {% include 'gameboard.html' %}
+        </div>
+    </div>
+    <div class="gameinfo info-p2">
+        <div class="infoheader">Player 2</div>
+        <div class="infoname">{{ player_2 }}</div>
+        <div class="infocells _p2_cells" title="Number of alive cells">0</div>
+    </div>
+</div>
+<script defer type="text/javascript" src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% endblock content %}

@@ -1,0 +1,14 @@
+<div class="gameboard {{ gameboard_class }}">
+{% for y in range(grid|length) %}
+    <div class="row">
+    {% for x in range(grid[0]|length) %}
+        {% if grid[y][x] != 0 %}
+            {% set cell_class = 'cell-p' ~ grid[y][x] %}
+        {% else %}
+            {% set cell_class = 'cell-dead' %}
+        {% endif %}
+        <div class="cell {{ cell_class }}" data-cell="{{ grid[y][x] }}" data-x="{{ x }}" data-y="{{ y }}"></div>
+    {% endfor %}
+    </div>
+{% endfor %}
+</div>
